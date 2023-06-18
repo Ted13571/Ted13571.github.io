@@ -7,9 +7,21 @@
     font-family: News;
     src: url(Fonts/Roboto-Regular.ttf);
 }
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url(Fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto-Regular-Regular;
+    src: url(Fonts/Roboto-Regular-Regular.ttf);
+}
 
-body {
+body{
     margin: 0;
+}
+::selection{
+    background-color: #DC0714;
+    color: white;
 }
 
 #red-top {
@@ -46,6 +58,7 @@ body {
 
     margin: 0px 15px 0px 0px;
     height: 100%;
+    padding: 0;
 }
 
 #lfcbadge-ul {
@@ -113,7 +126,6 @@ body {
 
     margin-left: -30px;
     transform: translateX(-11.3675px);
-
 }
 
 #fixtures-dropdown-content a {
@@ -272,7 +284,7 @@ body {
     text-transform: uppercase;
 
     font-size: 12px;
-    font-family: Header;
+    font-family: RobotoCondensed-Regular;
     font-weight: 100;
 
     color: rgb(184, 184, 184);
@@ -293,8 +305,8 @@ body {
 #champions-league-table {
     font-family: News;
 
-    margin-right: 240px;
-    margin-left: 240px;
+    margin-right: 10vw;
+    margin-left: 10vw;
 }
 
 #champions-league-table {
@@ -385,83 +397,83 @@ body {
 }
 
 #mci::before {
-    background-image: url('PL\ Logos/t43.png');
+    background-image: url('PL\ Logos/Man-City.png');
 }
 
 #ars::before {
-    background-image: url('PL\ Logos/t3.png');
+    background-image: url('PL\ Logos/Arsenal.png');
 }
 
 #mun::before {
-    background-image: url('PL\ Logos/t1.png');
+    background-image: url('PL\ Logos/Man-Utd.png');
 }
 
 #new::before {
-    background-image: url('PL\ Logos/t4.png');
+    background-image: url('PL\ Logos/Newcastle.png');
 }
 
 .liv::before {
-    background-image: url('PL\ Logos/t14.png');
+    background-image: url('PL\ Logos/Liverpool.png');
 }
 
 #bha::before {
-    background-image: url('PL\ Logos/t36.png');
+    background-image: url('PL\ Logos/Brighton.png');
 }
 
 #avl::before {
-    background-image: url('PL\ Logos/t7.png');
+    background-image: url('PL\ Logos/Aston-Villa.png');
 }
 
 #tot::before {
-    background-image: url('PL\ Logos/t6.png');
+    background-image: url('PL\ Logos/Tottenham.png');
 }
 
 #bre::before {
-    background-image: url('PL\ Logos/t94.png');
+    background-image: url('PL\ Logos/Brentford.png');
 }
 
 #ful::before {
-    background-image: url('PL\ Logos/t54.png');
+    background-image: url('PL\ Logos/Fulham.png');
 }
 
 #cry::before {
-    background-image: url('PL\ Logos/t31.png');
+    background-image: url('PL\ Logos/Crystal-Palace.png');
 }
 
 #che::before {
-    background-image: url('PL\ Logos/t8.png');
+    background-image: url('PL\ Logos/Chelsea.png');
 }
 
 #wol::before {
-    background-image: url('PL\ Logos/t39.png');
+    background-image: url('PL\ Logos/Wolverhampton.png');
 }
 
 #whu::before {
-    background-image: url('PL\ Logos/t21.png');
+    background-image: url('PL\ Logos/West-Ham.png');
 }
 
 #bou::before {
-    background-image: url('PL\ Logos/t91.png');
+    background-image: url('PL\ Logos/Bournemouth.png');
 }
 
 #nfo::before {
-    background-image: url('PL\ Logos/t17.png');
+    background-image: url('PL\ Logos/Nottingham-Forest.png');
 }
 
 #eve::before {
-    background-image: url('PL\ Logos/t11.png');
+    background-image: url('PL\ Logos/Everton.png');
 }
 
 #lei::before {
-    background-image: url('PL\ Logos/t13.png');
+    background-image: url('PL\ Logos/Leicester.png');
 }
 
 #lee::before {
-    background-image: url('PL\ Logos/t2.png');
+    background-image: url('PL\ Logos/Leeds.png');
 }
 
 #sou::before {
-    background-image: url('PL\ Logos/t20.png');
+    background-image: url('PL\ Logos/Southampton.png');
 }
 
 #nap::before {
@@ -708,4 +720,122 @@ input[type=submit]:hover {
 #social li {
     height: fit-content;
     padding-right: 20px;
+}
+#social a{
+    transition-duration: 200ms;
+}
+#social a:hover{
+    opacity: 0.9;
+}
+
+
+
+
+#main-content-results{
+    margin-left: calc(10vw - 5px);
+    margin-right: calc(10vw - 5px);
+    font-family: Header;
+}
+#main-content-results *:not(div){
+    padding: 0;
+    margin: 0
+}
+.result-border-top{
+    width: 100%;
+    height: 1px;
+    background-color: lightgray;
+    margin: 20px 0px;
+}
+.month{
+    text-transform: uppercase;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: RobotoCondensed-Regular;
+    margin-left: 5px;
+    margin-top: 150px;
+}
+.result{
+    margin: 0px 5px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding-bottom: 30px !important;
+}
+.top *{
+    width:fit-content;
+}
+.top h3{
+    font-size: 17px;
+    margin-bottom: 5px !important;
+}
+.top :nth-child(1)>:nth-child(2){
+    font-size: 14px;
+    color: #6e6e6e;
+    font-weight: 300;
+    font-family: RobotoCondensed-Regular;
+}
+.top img{
+    height: calc(17px + 19px + 5px);
+}
+
+.center{
+    display: flex;
+}
+.center>.team--logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.center img{
+    height: 50px;
+    aspect-ratio: 1/1;
+}
+.center h4{
+    font-family: Roboto-Regular-Regular;
+    font-weight: 500;
+    font-size: 21px;
+}
+.score-container{
+    display: flex;
+    margin: 0px 20px;
+}
+.score{
+    background-color: #F6F6F6;
+    margin: 0px 1px;
+    font-family: News;
+    font-weight: 500;
+    font-size: 23px;
+}
+.score>p{
+    padding: 15px !important;
+}
+
+.highlights{
+    display: flex;
+    justify-content: right;
+    text-transform: uppercase;
+    margin: 20px 7px 0px 0px;
+}
+.highlights *{
+    display: inline-block;
+    font-size: 14px;
+}
+.highlights>div>i{
+    transform: rotate(90deg);
+    transition: transform 200ms ease-out;
+}
+.highlights>div{
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+.highlights>div:hover i{
+    transform: translateX(5px) rotate(90deg);
+}
+.highlights>div:hover{
+    color: lightgray;
 }
