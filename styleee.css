@@ -19,7 +19,7 @@
 body{
     margin: 0;
 }
-::selection{
+::selection :not(#navbar){
     background-color: #DC0714;
     color: white;
 }
@@ -77,6 +77,7 @@ body{
 
     margin: 0px 20px 0px 0px;
     height: 100%;
+    user-select: none;
 }
 
 #navbar-right>li>a {
@@ -113,7 +114,7 @@ body{
     height: 35px;
 }
 
-#fixtures-dropdown-content {
+#team-dropdown-content {
     position: absolute;
     pointer-events: none;
 
@@ -128,7 +129,7 @@ body{
     transform: translateX(-11.3675px);
 }
 
-#fixtures-dropdown-content a {
+#team-dropdown-content a {
     display: block;
     text-decoration: none;
     text-align: center;
@@ -143,14 +144,14 @@ body{
     padding: 0px 30px 0px 30px;
 }
 
-#fixtures-dropdown:hover #fixtures-dropdown-content>a {
+#team-dropdown:hover #team-dropdown-content>a {
     height: 17px;
     padding: 10px 30px 10px 30px;
     color: white;
     color: white;
 }
 
-#fixtures-dropdown-content :nth-child(1) {
+#team-dropdown-content :nth-child(1) {
     transition:
         height 300ms ease 100ms,
         padding 300ms ease 100ms,
@@ -158,7 +159,7 @@ body{
         color 300ms ease 100ms;
 }
 
-#fixtures-dropdown-content :nth-child(2) {
+#team-dropdown-content :nth-child(2) {
     transition:
         height 300ms ease 150ms,
         padding 300ms ease 150ms,
@@ -166,7 +167,7 @@ body{
         color 300ms ease 150ms;
 }
 
-#fixtures-dropdown-content :nth-child(3) {
+#team-dropdown-content :nth-child(3) {
     border-radius: 0px 0px 7px 7px;
     transition:
         height 300ms ease 200ms,
@@ -175,14 +176,14 @@ body{
         color 300ms ease 200ms;
 }
 
-#fixtures-dropdown-content a:hover {
+#team-dropdown-content a:hover {
     background-color: #c90814;
 }
 
-#fixtures-dropdown:hover #fixtures-dropdown-content {
+#team-dropdown:hover #team-dropdown-content {
     pointer-events: all;
 }
-#fixtures-dropdown>a:hover{
+#team-dropdown>a:hover{
     cursor: pointer;
 }
 
@@ -293,24 +294,158 @@ body{
 }
 
 
+.team-navbar{
+    margin: 20px calc(57px + 3vw) 20px calc(57px + 3vw);
+    text-transform: uppercase;
+    font-family: Header;
+}
+.team-navbar>:last-child{
+    height: 1px;
+    width: 100%;
+    background-color: lightgrey;
+}
+.team-navbar>:first-child{
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+.team-navbar a{
+    text-decoration: none;
+}
+.team-navbar>div>:first-child>ul>li:not(.team-navbar-active)>a{
+    color: lightgrey;
+    transition-duration: 200ms;
+}
+.team-navbar>div>:first-child>ul>li:not(.team-navbar-active)>a:hover{
+    color: rgb(97, 94, 94);
+}
+.team-navbar>div>:first-child>ul>li.team-navbar-active>a{
+    color: black;
+}
+.team-navbar>div>:first-child>ul>li.team-navbar-active>div{
+    height: 2px;
+    width: 100%;
+    background-color: #DC0714;
+    margin-top: 15px;
+}
+.team-navbar ul{
+    margin: 0 !important;
+    padding: 0 !important;
+    color: lightgray;
+    font-size: 15px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+}
+.team-navbar>div>:first-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.team-navbar>div>:first-child>ul>li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 15px;
+    height: 100%;
+}
 
+.table-dropdown{
+    position: relative;
+    z-index: 48;
+    border-color: 1px solid black;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 5px;
+    background-color: rgb(243, 243, 243);
+    transition-duration: 400ms;
+}
+.table-dropdown>:first-child{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.table-dropdown>div>i{
+    margin-left: 5px;
+    font-size: 12px;
+    transform: rotate(180deg);
+    transition: transform 400ms ease;
+}
+.table-dropdown :first-child:hover>i{
+    transform: rotate(0deg);
+}
+.table-dropdown:hover .tables-dropdwon-content{
+    pointer-events: auto;
+}
+
+.tables-dropdwon-content{
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+    margin-top: 5px;
+    transform: translateX(-16px);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+}
+.tables-dropdwon-content>a{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(243, 243, 243);
+    transition: transform 200ms ease, opacity 200ms ease, background-color 200ms ease 00ms;
+    padding: 10px;
+    color: black;
+    transform: translateY(-20px);
+    opacity: 0;
+    width: 101.375px;
+    box-sizing: border-box;
+}
+.table-dropdown:hover .tables-dropdwon-content a{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.tables-dropdwon-content>a:hover{
+    background-color: rgb(231, 229, 229);
+}
+
+/* .team-navbar>div>:last-child{
+    width: 100%;
+    height: 1px;
+    background-color: lightgray;
+} */
+.tables-dropdwon-content>:last-child{
+    transition: transform 200ms ease 200ms, opacity 200ms ease 200ms, background-color 200ms ease;
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+.tables>*:not(:nth-child(1)){
+    margin-top: 100px;
+}
 
 .competition-table {
     border-collapse: collapse;
 
     width: 100%;
 }
+.table-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.table-top img{
+    width: calc(40px);
+}
 
-#premier-league-table,
-#champions-league-table {
+.league-table {
     font-family: News;
 
     margin-right: 10vw;
     margin-left: 10vw;
-}
-
-#champions-league-table {
-    margin-top: 100px;
 }
 
 .competition-table th {
@@ -347,7 +482,10 @@ body{
 
 .table-header {
     font-size: 11.5px;
-    color: #D6E3F1;
+    height: 60px !important;
+}
+.table-header th{
+    color: rgb(212, 212, 212) !important;
 }
 
 .club,
@@ -367,8 +505,7 @@ body{
     width: 80px;
 }
 
-#pl,
-#cl {
+.league-caption {
     background-color: black;
     color: white;
     border-radius: 25px;
@@ -475,6 +612,17 @@ body{
 #sou::before {
     background-image: url('PL\ Logos/Southampton.png');
 }
+#brn::before{
+    background-image: url('PL\ Logos/Burnley.svg');
+}
+#wat::before{
+    background-image: url('PL\ Logos/Watford.png');
+}
+#nor::before{
+    background-image: url('PL\ Logos/Norwich.png');
+}
+
+
 
 #nap::before {
     background-image: url('CL\ Logos/nap.png');
@@ -753,6 +901,8 @@ input[type=submit]:hover {
     font-weight: 600;
     font-family: RobotoCondensed-Regular;
     margin-left: 5px;
+}
+.month :not(:first-child){
     margin-top: 150px;
 }
 .result{
